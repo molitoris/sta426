@@ -34,7 +34,7 @@ First, we look at a histogram with standard scale.
 ```{r}
 
 ggplot2::ggplot(df, aes(x=smp)) +
-  ggplot2::geom_histogram(bins=8) +
+  ggplot2::geom_histogram(bins=8, color="black", fill="white") +
   ggplot2::xlab("log-normal dist")
 ```
 
@@ -43,7 +43,7 @@ Next, we plot the histogram with log scale.
 
 ```{r}
 ggplot2::ggplot(df, aes(x=log(smp))) +
-  ggplot2::geom_histogram(bins = 8) +
+  ggplot2::geom_histogram(bins = 8, color="black", fill="white") +
   ggplot2::xlab("log-normal dist")
 ```
 
