@@ -1,0 +1,22 @@
+# R history
+.Rhistory
+.Rapp.history
+
+# R Session
+.RData
+
+# R Userdata
+.Ruserdata
+
+# RStudio
+.Rproj.user
+
+.rstudio
+
+# R markdown default cache
+*_cache/
+.cache/
+
+
+# bash
+.bash_history

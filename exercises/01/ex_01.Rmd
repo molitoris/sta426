@@ -1,0 +1,53 @@
+---
+title: "Exercise 1"
+author: "Rafael S. Müller"
+date: "15 9 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(ggplot2)
+```
+# Log-Normal Distribution
+
+First, we set the parameters for the log normal distribution.
+
+```{r}
+v_mean <- 1
+v_sd <- 0.25
+n <- 100
+```
+
+We take `r n` samples from a log-normal distribution with a mean of `r v_mean` and a standard deviation of `r v_sd`.
+
+```{r cars}
+df <- data.frame(smp=stats::rlnorm(n, meanlog = v_mean, sdlog = v_sd))
+```
+
+## Histogram (standard scale)
+First, we look at a histogram with standard scale.
+
+```{r}
+
+ggplot2::ggplot(df, aes(x=smp)) +
+  ggplot2::geom_histogram(bins=8) +
+  ggplot2::xlab("log-normal dist")
+```
+
+## Histogram (log scale)
+Next, we plot the histogram with log scale.
+
+```{r}
+ggplot2::ggplot(df, aes(x=log(smp))) +
+  ggplot2::geom_histogram(bins = 8) +
+  ggplot2::xlab("log-normal dist")
+```
+
+## Summary
+
+The mean and standard deviation of the sampled log-normal distribution are `r base::round(base::mean(df$smp), digits = 2)` and `r base::round(stats::sd(df$smp), digits = 2) `,respectively
+
